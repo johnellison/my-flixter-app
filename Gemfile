@@ -14,6 +14,13 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Use Bourbon for mixins
+gem 'bourbon'
+# Use Neat for SASS grid
+gem 'neat'
+# Use Refills for components
+gem 'refills'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -35,7 +42,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Use PRY in console
   gem 'pry-rails'
-  
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
