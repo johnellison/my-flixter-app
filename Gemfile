@@ -20,6 +20,8 @@ gem 'bourbon'
 gem 'neat'
 # Use Refills for components
 gem 'refills'
+# Use normalize.css for resets
+gem 'normalize-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
