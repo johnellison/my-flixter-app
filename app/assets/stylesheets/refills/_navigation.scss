@@ -277,6 +277,14 @@ header.navigation {
       clear: none;
       float: right;
     }
+    p {
+      display: inline;
+      padding-right: .8em;
+      line-height: 60px;
+      // background-color: $base-secondary-color;
+      color: $navigation-color;;
+      float: left;
+    }
   }
 
   .sign-up {
@@ -289,22 +297,19 @@ header.navigation {
     text-transform: uppercase;
   }
 
-  .sign-in {
+  a.sign-in, a.sign-out {
     display: inline;
     padding-right: .8em;
-    line-height: 60px;
+    line-height: 64px;
     // background-color: $base-secondary-color;
-    color: $navigation-color;;
     float: left;
-    a {
-      color: white;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.8em;
-      padding-right: 0.8em;
-      &:hover {
-        text-decoration: underline;
-      }
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    padding-right: 0.8em;
+    &:hover {
+      text-decoration: underline;
     }
   }
 

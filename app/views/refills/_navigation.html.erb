@@ -12,15 +12,13 @@
       </ul>
     </nav>
     <div class="navigation-tools">
-      <a href="javascript:void(0)" class="sign-up">Sign Up</a>
-      <p class="sign-in">
       <% if user_signed_in? %>
-        <!-- <a href="javascript:void(0)">Sign Out</a> -->
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
       <% else %>
-        <!-- <a href="javascript:void(0)">Sign In</a> -->
-        <%= link_to 'Sign In', new_user_session_path %>
+        <%= link_to 'Sign Up', new_user_registration_path, class: 'sign-up' %>
+        <%= link_to 'Sign In', new_user_session_path, class: 'sign-in' %>
       <% end %>
+      <p>
         or
       </p>
     </div>
