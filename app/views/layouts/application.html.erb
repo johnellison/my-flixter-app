@@ -7,10 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'refills/navigation' %>
-<article>
-  <%= yield %>
-</article>
+  <%= render 'refills/flashes' %>
+  <%= render 'refills/navigation' %>
+  <article>
+    <%= yield %>
+  </article>
 
 <%= render 'refills/footer_2' %>
 </body>

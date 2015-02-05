@@ -289,6 +289,22 @@ header.navigation {
     text-transform: uppercase;
   }
 
+  .log-in {
+    display: inline;
+    padding-right: .8em;
+    line-height: 60px;
+    // background-color: $base-secondary-color;
+    color: $navigation-color;;
+    float: left;
+    a {
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      padding-right: 0.8em;
+    }
+  }
+
   // Search bar
 
   .search-bar {
