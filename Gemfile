@@ -6,7 +6,7 @@ gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-group :assets do
+# group :assets do
   # Use SCSS for stylesheets
   gem 'sass-rails', '~> 5.0'
   # Use Uglifier as compressor for JavaScript assets
@@ -25,7 +25,7 @@ group :assets do
   gem 'normalize-rails'
   # Use jquery as the JavaScript library
   gem 'jquery-rails'
-end
+# end
 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

@@ -2,18 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Welcome Section
 
-.welcome-container {
+.features, {
+  padding: 5em 0;
+}
+
+.narrative-container {
   @include outer-container;
 }
 
-.welcome-content {
+.narrative-content {
   @include span-columns(12);
-}
 
-button {
-  @include button;
+  @include media($medium-screen-up) {
+    @include span-columns(6 of 12);
+    &.odd {
+      @include shift(6);
+    }
+  }
+  
 }
-
 

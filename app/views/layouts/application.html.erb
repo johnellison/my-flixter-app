@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= render 'refills/navigation' %>
+<article>
+  <%= yield %>
+</article>
 
-<%= yield %>
-
+<%= render 'refills/footer_2' %>
 </body>
 </html>
