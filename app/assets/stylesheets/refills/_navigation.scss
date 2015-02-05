@@ -289,7 +289,7 @@ header.navigation {
     text-transform: uppercase;
   }
 
-  .log-in {
+  .sign-in {
     display: inline;
     padding-right: .8em;
     line-height: 60px;
@@ -302,6 +302,9 @@ header.navigation {
       text-transform: uppercase;
       font-size: 0.8em;
       padding-right: 0.8em;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 

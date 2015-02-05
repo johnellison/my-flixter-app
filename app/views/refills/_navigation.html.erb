@@ -13,8 +13,14 @@
     </nav>
     <div class="navigation-tools">
       <a href="javascript:void(0)" class="sign-up">Sign Up</a>
-      <p class="log-in">
-        <a href="javascript:void(0)" >Log In</a>
+      <p class="sign-in">
+      <% if user_signed_in? %>
+        <!-- <a href="javascript:void(0)">Sign Out</a> -->
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <!-- <a href="javascript:void(0)">Sign In</a> -->
+        <%= link_to 'Sign In', new_user_session_path %>
+      <% end %>
         or
       </p>
     </div>
