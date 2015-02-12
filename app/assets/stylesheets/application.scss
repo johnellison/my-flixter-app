@@ -17,7 +17,8 @@
  @import 'bourbon',
          'base/grid-settings',
          'neat',
-         'base/base';
+         'base/base',
+         'config';
 
 /* application imports */
 @import  'refills/navigation',
