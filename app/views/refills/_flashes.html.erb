@@ -5,11 +5,14 @@
 <div class="flash-error">
   <span>This is an error message <a href="#">with a link</a></span>
 </div> -->
+<% if notice.present? %>
+  <div class="flash-notice">
+    <span><%= notice %></span>
+  </div>
+<% end %>
 
-<div class="flash-notice">
-  <span><%= notice %></span>
-</div>
-
-<div class="flash-alert">
-  <span><%= alert %></span>
-</div>
+<% if alert.present? %>
+  <div class="flash-alert">
+    <span><%= alert %></span>
+  </div>
+<% end %>

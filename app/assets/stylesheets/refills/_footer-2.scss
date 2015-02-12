@@ -40,16 +40,18 @@ html, body {
 
   li {
     list-style: none;
+    color: white;
   }
 
   a {
     text-decoration: none;
+    // color: white;
   }
   //////////////////////////////////////////////////////////////////////////////////
 
   $footer-background: desaturate(darken($base-accent-color, 20%), 30%);
   $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
+  $footer-link-color: transparentize($footer-color, 0.1);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
   background: $footer-background;
@@ -89,6 +91,14 @@ html, body {
     @include media($large-screen) {
       display: inline;
       text-align: left;
+    }
+    button {
+      // @include button;
+      background-color: $dark-gray;
+      margin: 0;
+      padding: .5em .75em;
+      // color: white;
+      font-weight: 400;
     }
   }
 

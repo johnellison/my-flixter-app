@@ -1,5 +1,11 @@
 <div class="new-course-form-wrapper">
-  <div class="new-couse-form-content">
+  <div class="new-course-form-content">
     <h1>Create a new course</h1>
+    <%= simple_form_for @course, url: teacher_courses_path do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :cost %>
+      <%= f.submit 'Create', class: 'button' %>
+    <% end %>
   </div>
 </div>
