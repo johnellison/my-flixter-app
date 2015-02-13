@@ -23,6 +23,8 @@ gem 'refills'
 gem 'normalize-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Use smooth scroll for in-page links
+gem 'jquery-smooth-scroll-rails', '~> 0.0.5'
 # Use devise gem for authentication
 gem 'devise'
 # Use simple form for forms

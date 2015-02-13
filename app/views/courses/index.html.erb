@@ -4,9 +4,9 @@
     <ul class="course-list">
       <% @courses.each do |course| %>
         <li class="course-card">
-          <h2><%= course.title %></h2>
+          <h2><%= link_to course.title, course_path(course) %></h2>
           <p><%= truncate(course.description, length: 150) %></p>
-          <%= link_to 'View Course', '#', class: 'button' %>
+          <%= link_to 'View Course', course_path(course), class: 'button' %>
         </li>
       <% end %>
     </ul>

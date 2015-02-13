@@ -1,7 +1,9 @@
 <div class="hero">
 	<div class="hero-inner">
-    <a href="" class="hero-logo"><img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png
-" alt="Logo Image"></a>
+    <%= link_to courses_path do %>
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png
+" alt="Logo Image">
+    <% end %>
 		<div class="hero-copy">
 			<h1>Craft Your Ticket To Freedom</h1>
 			<p>
@@ -11,6 +13,6 @@
         and make bank while doing it.
       </p>	
 		</div>
-    <button>Learn More</button>
+    <a href="#features"><button>Learn More</button></a>
 	</div>
 </div>
