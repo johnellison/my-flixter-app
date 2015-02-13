@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   namespace :teacher do
     resources :courses, only: [:new, :create, :show]
   end
+  resources :courses, only: [:index, :show] 
 end

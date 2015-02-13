@@ -1,0 +1,15 @@
+<div class="courses-index-wrapper">
+  <div class="courses-index-content">
+    <h1>Launch Your Freelance Freedom</h1>
+    <ul class="course-list">
+      <% @courses.each do |course| %>
+        <li class="course-card">
+          <h2><%= course.title %></h2>
+          <p><%= truncate(course.description, length: 150) %></p>
+          <%= link_to 'View Course', '#', class: 'button' %>
+        </li>
+      <% end %>
+    </ul>
+    
+  </div>
+</div>

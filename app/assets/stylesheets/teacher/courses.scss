@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .new-course-form-wrapper, .show-course-wrapper {
   @include outer-container;
-  padding: 3rem 0;
+  padding: 3em 0;
 }
 
 .new-course-form-content, .show-course-content {

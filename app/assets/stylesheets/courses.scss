@@ -1,0 +1,57 @@
+// Place all the styles related to the courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.courses-index-wrapper {
+  @include outer-container;
+  padding: 3em 0;
+}
+
+.courses-index-content {
+  // @include span-columns(10);
+  // @include shift(1);
+  h1, h2 {
+    text-align: center;
+  }
+  // @include media($large-screen-up) {
+  //   @include span-columns(12 of 12);
+  //   @include shift(0);
+  // }
+}
+
+// $course-card-md: new-breakpoint(min-width 680px);
+
+// $course-card-lg: new-breakpoint()
+
+li.course-card {
+  padding: 1em 2em;
+  border: 1px solid gray;
+  border-radius: $base-border-radius;
+  margin-bottom: 1em;
+  @include fill-parent;
+
+  @include media($medium-screen-up) {
+    @include span-columns(6);
+    // @include shift(0);
+    @include omega(2n);
+    margin-bottom: 2em;
+  }
+
+  @include media($large-screen-up) {
+    @include omega-reset(2n);
+    @include span-columns(4);
+    @include omega(3n);
+  }
+
+  a.button {
+    @include button;
+    // text-align: right;
+    width: 100%;
+    text-align: center;
+  }
+  
+
+  // @include media($large-screen) {
+  //   @include span-columns(4);
+  //   @include omega(3n);
+  // }
+}
