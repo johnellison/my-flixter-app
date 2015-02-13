@@ -23,7 +23,7 @@
 // $course-card-lg: new-breakpoint()
 
 li.course-card {
-  padding: 1em 2em;
+  padding: 1em 1.5em;
   border: 1px solid gray;
   border-radius: $base-border-radius;
   margin-bottom: 1em;
@@ -40,6 +40,16 @@ li.course-card {
     @include omega-reset(2n);
     @include span-columns(4);
     @include omega(3n);
+  }
+
+  .course-title {
+    // text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 200;
+  }
+
+  .course-description {
+    // background-color: $light-gray;
   }
 
   a.button {

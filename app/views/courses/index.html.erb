@@ -4,8 +4,9 @@
     <ul class="course-list">
       <% @courses.each do |course| %>
         <li class="course-card">
-          <h2><%= link_to course.title, course_path(course) %></h2>
-          <p><%= truncate(course.description, length: 150) %></p>
+          <h2 class="course-title"><%= link_to course.title, course_path(course) %></h2>
+          <!-- <img src="http://placehold.it/400x200"> -->
+          <p class="course-description"><%= truncate(course.description, length: 150) %></p>
           <%= link_to 'View Course', course_path(course), class: 'button' %>
         </li>
       <% end %>
