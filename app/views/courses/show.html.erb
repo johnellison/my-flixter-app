@@ -1,6 +1,10 @@
 <div class="show-course-wrapper">
   <div class="show-course-content">
-    <h1><%= @course.title %></h1>
-    <p><%= @course.description %></p>
+    <h1 class="course-title"><%= @course.title %></h1>
+    <p class="course-description"><%= @course.description %></p>
+    <p class="course-cost">$<%= @course.cost %></p>
+    <% if current_user && current_user == @course.user %>
+    <%= link_to 'Teacher Panel', teacher_course_path(@course), class: 'teacher-panel' %>
+    <% end %>
   </div>
 </div>
