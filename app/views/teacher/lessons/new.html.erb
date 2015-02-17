@@ -3,9 +3,9 @@
    <hgroup>
      <h1>Create New Lesson</h1>
      <p>for</p>
-     <h3>Chapter <%= @section.id %>: <%= @section.title %></h3>
+     <h3>Chapter <%= current_section.id %>: <%= current_section.title %></h3>
    </hgroup>
-    <%= simple_form_for @lesson, url: teacher_section_lessons_path(@section) do |f| %>
+    <%= simple_form_for @lesson, url: teacher_section_lessons_path(current_section) do |f| %>
       <%= f.input :title %>
       <%= f.input :subtitle %>
       <%= f.submit 'Create Lesson', class: 'add-lesson' %>

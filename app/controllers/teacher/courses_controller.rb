@@ -8,7 +8,6 @@ class Teacher::CoursesController < ApplicationController
     @course = current_user.courses.create(course_params)
     if @course.valid?
       redirect_to teacher_course_path(@course)
-    
     else
       render :new, status: :unprocessable_entity
     end
