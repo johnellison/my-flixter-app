@@ -1,6 +1,7 @@
 <div class="show-course-wrapper">
   <div class="show-course-content">
-    <h1><%= @course.title %></h1>
+    <!-- Course Info -->
+    <%= render 'courses/info' %>
 
     <!-- Preview as student -->
     <%= link_to 'Preview Course', course_path(@course), class: 'preview-course' %>
@@ -9,14 +10,7 @@
     <%= link_to 'Add Section', new_teacher_course_section_path(@course), class: 'add-section' %>
 
     <!-- List Course Sections -->
-    <ul class="course-section-list">
-      <% @course.sections.each do |section| %>
-        <li class="course-section-list--item">
-          <h2 class="course-section--id">Chapter <%= section.id %></h2>
-          <h4 class="course-section--title"><%= section.title %></h4>
-        </li>
-      <% end %>
-    </ul>
+    <%= render 'courses/sections' %>
 
   </div>
 </div>
