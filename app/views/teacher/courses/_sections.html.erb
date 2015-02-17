@@ -21,6 +21,9 @@
             </li>
           <% end %>
           </ul>
+          <% if current_user && current_user == @course.user %>
+            <%= link_to 'Add Lesson', new_teacher_section_lesson_path(section) %>
+          <% end %>
         </li>
       <% end %>
     </ul>

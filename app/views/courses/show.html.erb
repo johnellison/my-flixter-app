@@ -2,7 +2,7 @@
   <div class="show-course-content">
     <!-- Course Info -->
     <%= render 'courses/info' %>
-    
+
     <% if current_user && current_user == @course.user %>
     <%= link_to 'Teacher Panel', teacher_course_path(@course), class: 'teacher-panel' %>
     <% end %>
