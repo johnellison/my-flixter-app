@@ -28,26 +28,5 @@
   }
 }
 
-a.add-section, .add-lesson {
-  @include button();
-}
 
-a.preview-course {
-  @include button();
-}
 
-.course-sections-list {
-  margin-top: 2em;
-  padding: 1em 2em;
-  border: 1px solid $base-font-color;
-  border-radius: $base-border-radius;
-
-}
-
-.course-section--id {
-  margin: 0;
-}
-
-.course-section--title {
-  font-weight: 300;
-}

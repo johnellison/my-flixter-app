@@ -4,10 +4,15 @@
     <%= render 'courses/info' %>
 
     <% if current_user && current_user == @course.user %>
-    <%= link_to 'Teacher Panel', teacher_course_path(@course), class: 'teacher-panel' %>
+    <div class="teacher-panel-wrapper">
+      <%= link_to 'Access Teacher Panel', teacher_course_path(@course), class: 'button secondary' %>
+    </div>
     <% end %>
 
+    <hr>
+
     <!-- List Course Sections -->
-    <%= render 'courses/sections' %>
+    <%= render partial: 'courses/sections', locals: { include_add_lesson: false } %>
+
   </div>
 </div>

@@ -2,7 +2,7 @@
       <% @course.sections.each do |section| %>
         <li class="course-section-list--item">
           <h2 class="course-section--id">
-            Chapter <%= section.id %>
+            Section <%= section.id %>
           </h2>
           <h4 class="course-section--title">
             <%= section.title %>
@@ -21,6 +21,12 @@
             </li>
           <% end %>
           </ul>
+          
+          <% if include_add_lesson %>
+            <% if current_user && current_user == @course.user %>
+              <%= link_to 'Add Lesson', new_teacher_section_lesson_path(section), class: 'button' %>
+            <% end %>
+          <% end %>
         </li>
       <% end %>
     </ul>

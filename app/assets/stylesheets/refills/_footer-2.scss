@@ -92,13 +92,9 @@ html, body {
       display: inline;
       text-align: left;
     }
-    button {
-      // @include button;
-      background-color: $dark-gray;
+    .button {
       margin: 0;
       padding: .5em .75em;
-      // color: white;
-      font-weight: 400;
     }
   }
 

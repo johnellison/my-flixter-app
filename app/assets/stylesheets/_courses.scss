@@ -9,15 +9,15 @@
 }
 
 .courses-index-content {
-  // @include span-columns(10);
-  // @include shift(1);
+  @include span-columns(10);
+  @include shift(1);
   h1, h2 {
     text-align: center;
   }
-  // @include media($large-screen-up) {
-  //   @include span-columns(12 of 12);
-  //   @include shift(0);
-  // }
+  @include media($large-screen-up) {
+    @include span-columns(12 of 12);
+    @include shift(0);
+  }
 }
 
 // Course Card Module
@@ -57,9 +57,7 @@ li.course-card {
   // background-color: $light-gray;
 }
 
-a.course-card--link {
-  @include button;
-  // text-align: right;
+a.button {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
@@ -77,6 +75,10 @@ a.course-card--link {
   h1 {
     text-align: center;
   }
+  .button {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 a.teacher-panel {
@@ -85,5 +87,48 @@ a.teacher-panel {
 
 .course-cost {
   font-weight: 600;
+}
+
+// Course Sections
+.course-sections-list {
+  margin: 2em 0;
+}
+
+.course-section-list--item { 
+  @include outer-container;
+  margin-bottom: 2em;
+  padding: 1em 1.5em;
+  border: 1px solid $base-font-color;
+  border-radius: $base-border-radius;
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.course-section--id {
+  margin: 0;
+}
+
+.course-section--title {
+  font-weight: 300;
+}
+
+// Section Lessons
+
+.section-lessons-list {
+  margin: 2em 0;
+}
+
+.section-lesson-list--item {
+  margin-bottom: 1em;
+  @include media($medium-screen-up) {
+    @include span-columns(4);
+    @include omega(3n);
+  }
+}
+
+.section-lesson--title {
+  margin: 0;
 }
 

@@ -1,5 +1,5 @@
 #{$all-button-inputs},
-button {
+button, .button {
   @include appearance(none);
   -webkit-font-smoothing: antialiased;
   background-color: $action-color;
@@ -17,6 +17,18 @@ button {
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &.secondary {
+    background-color: $base-secondary-color;
+    color: $base-font-color;
+    &:hover,
+    &:focus {
+      background-color: darken($base-secondary-color, 15%);
+      color: $base-font-color;
+    }
+  }
 
   &:hover,
   &:focus {
