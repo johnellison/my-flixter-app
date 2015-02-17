@@ -1,16 +1,19 @@
 // Place all the styles related to the teacher/courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.new-course-form-wrapper {
+.new-course-form-wrapper, .new-section-form-wrapper {
   @include outer-container;
   padding: 3em 0;
 }
 
-.new-course-form-content {
+.new-course-form-content, .new-section-form-content {
   @include span-columns(10);
   @include shift(1);
-  h1 {
+  h1, hgroup {
     text-align: center;
+  }
+  hgroup > * {
+    margin: 0;
   }
 }
 
@@ -23,4 +26,24 @@
     @include span-columns(6 of 12);
     @include shift(3);
   }
+}
+
+a.add-section {
+  @include button();
+}
+
+a.preview-course {
+  @include button();
+}
+
+.course-section-list {
+  margin-top: 2em;
+}
+
+.course-section--id {
+  margin: 0;
+}
+
+.course-section--title {
+  font-weight: 300;
 }
