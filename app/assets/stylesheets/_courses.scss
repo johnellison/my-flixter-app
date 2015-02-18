@@ -132,3 +132,10 @@ a.teacher-panel {
   margin: 0;
 }
 
+a > .section-lesson--subtitle {
+  color: $base-font-color;
+  &:hover {
+    color: lighten($base-font-color, 15%)
+  }
+}
+

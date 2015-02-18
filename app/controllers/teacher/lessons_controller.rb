@@ -19,7 +19,7 @@ class Teacher::LessonsController < ApplicationController
 
   def require_auth_for_current_section
     if current_section.course.user != current_user
-      return render text: 'Unauthorized', status: :unauthorized  
+      render text: 'You are unauthorized to perform this action', status: :unauthorized  
     end
   end
 

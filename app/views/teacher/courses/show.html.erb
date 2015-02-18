@@ -5,16 +5,16 @@
 
     <!-- Preview as student -->
     <div class="teacher-panel-wrapper">
-        <%= link_to 'Preview Course as a Student', course_path(@course), class: 'button secondary' %>
+        <%= link_to 'Preview Course as a Student', course_path(current_course), class: 'button secondary' %>
     </div>
 
     <hr>
 
     <!-- List Course Sections -->
-    <%= render partial: 'courses/sections', locals: { include_add_lesson: true } %>
+    <%= render partial: 'courses/sections_list', locals: { include_add_lesson: true } %>
 
     <!-- Add a section to this course -->
-    <%= link_to 'Add Section', new_teacher_course_section_path(@course), class: 'button secondary' %>
+    <%= link_to 'Add Section', new_teacher_course_section_path(current_course), class: 'button secondary' %>
 
   </div>
 </div>

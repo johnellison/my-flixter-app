@@ -1,5 +1,5 @@
 <ul class="course-sections-list">
-      <% @course.sections.each do |section| %>
+      <% current_course.sections.each do |section| %>
         <li class="course-section-list--item">
           <h2 class="course-section--id">
             Section <%= section.id %>
@@ -12,18 +12,20 @@
           <ul class="section-lessons-list">
           <% section.lessons.each do |lesson| %>
             <li class="section-lesson-list--item">
-              <h5 class="section-lesson--title">
-                <%= lesson.title %>
-              </h5>
-              <p class="section-lesson--subtitle">
-                <%= lesson.subtitle %>
-              </p>
+              <%= link_to lesson_path(lesson) do %>
+                <h5 class="section-lesson--title">
+                  <%= lesson.title %>
+                </h5>
+                <p class="section-lesson--subtitle">
+                  <%= lesson.subtitle %>
+                </p>
+              <% end %>
             </li>
           <% end %>
           </ul>
           
           <% if include_add_lesson %>
-            <% if current_user && current_user == @course.user %>
+            <% if current_user && current_user == current_course.user %>
               <%= link_to 'Add Lesson', new_teacher_section_lesson_path(section), class: 'button' %>
             <% end %>
           <% end %>

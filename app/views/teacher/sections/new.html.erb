@@ -5,7 +5,7 @@
      <p>for</p>
      <h3><%= @course.title %></h3>
    </hgroup>
-    <%= simple_form_for @section, url: teacher_course_sections_path(@course) do |f| %>
+    <%= simple_form_for @section, url: teacher_course_sections_path(current_course) do |f| %>
       <%= f.input :title %>
       <%= f.submit 'Create Section', class: 'add-section' %>
     <% end %>
