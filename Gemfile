@@ -35,10 +35,8 @@ gem 'carrierwave'
 gem 'figaro'
 # Use minimagick for image resizing on upload
 gem 'mini_magick'
-# Use fog for carrierwave & amazon s3 setup
-gem 'fog'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# Use carrierwave-aws for carrierwave & amazon s3 setup
+gem 'carrierwave-aws'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
