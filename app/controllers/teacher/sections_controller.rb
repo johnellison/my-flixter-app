@@ -25,7 +25,7 @@ class Teacher::SectionsController < ApplicationController
 
   helper_method :current_course
   def current_course
-    @course ||= Course.find(params[:course_id]
+    @course ||= Course.find(params[:course_id])
   end
 
   def section_params
