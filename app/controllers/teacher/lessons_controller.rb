@@ -8,11 +8,12 @@ class Teacher::LessonsController < ApplicationController
 
   def create
     @lesson = current_section.lessons.create(lesson_params)
-    if @lesson.valid?
-      redirect_to teacher_course_path(current_section.course)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    redirect_to teacher_course_path(current_section.course)
+    # if @lesson.valid?
+    #   redirect_to teacher_course_path(current_section.course)
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end
   end
 
   private
@@ -29,7 +30,7 @@ class Teacher::LessonsController < ApplicationController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:title, :subtitle)
+    params.require(:lesson).permit(:title, :subtitle, :video)
   end
 
 
