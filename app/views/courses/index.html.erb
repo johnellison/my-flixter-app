@@ -5,7 +5,7 @@
       <% @courses.each do |course| %>
         <li class="course-card">
           <h2 class="course-card--title"><%= link_to course.title, course_path(course) %></h2>
-          <img src="http://placehold.it/400x200">
+          <%= image_tag course.image %>
           <p class="course-card--description"><%= truncate(course.description, length: 150) %></p>
           <%= link_to 'View Course', course_path(course), class: 'button' %>
         </li>

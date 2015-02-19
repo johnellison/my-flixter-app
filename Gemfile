@@ -29,6 +29,12 @@ gem 'jquery-smooth-scroll-rails', '~> 0.0.5'
 gem 'devise'
 # Use simple form for forms
 gem 'simple_form'
+# Use carrierwave for image uploading
+gem 'carrierwave'
+# Use figaro to manage credentials
+gem 'figaro'
+# Use fog for carrierwave & amazon s3 setup
+gem 'fog'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
