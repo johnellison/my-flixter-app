@@ -33,6 +33,8 @@ gem 'simple_form'
 gem 'carrierwave'
 # Use figaro to manage credentials
 gem 'figaro'
+# Use minimagick for image resizing on upload
+gem 'mini_magick'
 # Use fog for carrierwave & amazon s3 setup
 gem 'fog'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
