@@ -65,6 +65,9 @@ group :development, :test do
   gem 'spring'
 end
 
+# Heroku gem for using rails 4 in production 
+gem 'rails_12factor', group: :production
+
 
 
 
