@@ -7,6 +7,10 @@
     <div class="teacher-panel-wrapper">
       <%= link_to 'Access Teacher Panel', teacher_course_path(current_course), class: 'button secondary' %>
     </div>
+    <% else %>
+    <div class="student-panel-wrapper">
+      <%= link_to 'Enroll in Course', course_enrollments_path(current_course), class: 'button', method: :post %>
+    </div>
     <% end %>
 
     <hr>
