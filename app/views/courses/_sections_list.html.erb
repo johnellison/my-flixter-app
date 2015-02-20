@@ -2,11 +2,12 @@
       <% current_course.sections.each do |section| %>
         <li class="course-section-list--item">
           <h2 class="course-section--id">
-            Section <%= section.id %>
+            Section <%= section.title %>
           </h2>
           <h4 class="course-section--title">
-            <%= section.title %>
+            <%= section.subtitle %>
           </h4>
+          <h6><%= section.id %></h6>
 
           <!-- List Section Lessons -->
           <ul class="section-lessons-list">
