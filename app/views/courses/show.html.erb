@@ -2,15 +2,23 @@
   <div class="show-course-content">
     <!-- Course Info -->
     <%= render 'courses/info' %>
-
+    <!-- Check if user is logged in and created the course -->
     <% if current_user && current_user == current_course.user %>
     <div class="teacher-panel-wrapper">
       <%= link_to 'Access Teacher Panel', teacher_course_path(current_course), class: 'button secondary' %>
     </div>
     <% else %>
-    <div class="student-panel-wrapper">
-      <%= link_to 'Enroll in Course', course_enrollments_path(current_course), class: 'button', method: :post %>
-    </div>
+      <!-- Check if the user is enrolled -->
+      <% if current_user.enrolled_in?(current_course) %>
+        <div class="student-panel-wrapper">
+          <p>You are currently enrolled in this course!</p>
+        </div>
+      
+      <% else %>
+      <div class="student-panel-wrapper">
+        <%= link_to 'Enroll in Course', course_enrollments_path(current_course), class: 'button', method: :post %>
+      </div>
+      <% end %>
     <% end %>
 
     <hr>
