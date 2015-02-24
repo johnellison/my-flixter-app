@@ -1,13 +1,11 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test "test if user is enrolled in course" do
-    user = FactoryGirl.build(:user)
-    course = FactoryGirl.build(:course)
-    enrollment = FactoryGirl.build(:enrollment)
+  test "user course enrollment" do
+    user = FactoryGirl.create(:user)
+    course = FactoryGirl.create(:course)
+    enrollment = FactoryGirl.create(:enrollment, user: user, course: course)
 
-    expected =  true
-    actual = user.enrolled_in?(course)
-    assert_equal expected, actual
+    assert user.enrolled_in?(course)
   end
 end
