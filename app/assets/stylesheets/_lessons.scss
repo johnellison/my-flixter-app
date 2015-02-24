@@ -20,3 +20,7 @@
     @include shift(0);
   }
 }
+
+.enrolled-msg {
+  @include flash($notice-color);
+}

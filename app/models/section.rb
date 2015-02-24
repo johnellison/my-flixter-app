@@ -3,4 +3,5 @@ class Section < ActiveRecord::Base
   has_many :lessons
 
   validates :title, presence: { message: 'Please add a title' }
+  validates :subtitle, presence: { message: 'Please add a subtitle' }
 end

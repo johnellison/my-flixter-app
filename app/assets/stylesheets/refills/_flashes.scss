@@ -8,17 +8,19 @@ $success-color: #e6efc2 !default;
   background-color: $color;
   color: darken($color, 70%);
   display: block;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 0;
   padding: $base-spacing / 2;
+  font-style: italic;
   text-align: center;
+  letter-spacing: 1px;
 
   a {
-    color: darken($color, 70%);
+    color: darken($color, 80%);
 
     &:focus,
     &:hover {
-      color: darken($color, 90%);
+      color: darken($color, 95%);
     }
   }
 }

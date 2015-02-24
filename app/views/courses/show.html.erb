@@ -11,7 +11,7 @@
       <!-- Check if the user is enrolled -->
       <% if current_user.enrolled_in?(current_course) %>
         <div class="student-panel-wrapper">
-          <p>You are currently enrolled in this course!</p>
+          <p class="enrolled-msg">You are enrolled in this course</p>
         </div>
       
       <% else %>
