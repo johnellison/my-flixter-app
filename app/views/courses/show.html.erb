@@ -2,18 +2,18 @@
   <div class="show-course-content">
     <!-- Course Info -->
     <%= render 'courses/info' %>
-    <!-- Check if user is logged in and created the course -->
+    <!-- Check if user is logged in and created the course (IE: is the teacher) -->
     <% if current_user && current_user == current_course.user %>
     <div class="teacher-panel-wrapper">
       <%= link_to 'Access Teacher Panel', teacher_course_path(current_course), class: 'button secondary' %>
     </div>
     <% else %>
-      <!-- Check if the user is enrolled -->
+      <!-- If not teacher, check if the user is enrolled -->
       <% if current_user.enrolled_in?(current_course) %>
         <div class="student-panel-wrapper">
           <p class="enrolled-msg">You are enrolled in this course</p>
         </div>
-      
+      <!-- if not enrolled, show enroll button -->
       <% else %>
       <div class="student-panel-wrapper">
         <%= link_to 'Enroll in Course', course_enrollments_path(current_course), class: 'button', method: :post %>
