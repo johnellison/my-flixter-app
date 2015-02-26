@@ -7,29 +7,30 @@
     <div class="teacher-panel-wrapper">
       <%= link_to 'Access Teacher Panel', teacher_course_path(current_course), class: 'button secondary' %>
     </div>
-    <% end %>
-    <!-- If not teacher, check if the user is enrolled -->
-    <% if current_user && current_user.enrolled_in?(current_course) %>
-      <div class="student-panel-wrapper">
-        <p class="enrolled-msg">You are enrolled in this course</p>
-      </div>
-    <!-- if not enrolled, show enroll button -->
     <% else %>
-    <div class="student-panel-wrapper">
-      <%= link_to 'Enroll in Course', course_enrollments_path(current_course), class: 'button', method: :post %>
-      <%= form_tag course_enrollments_path(current_course) do %>
-        <article>
-          <label class="amount">
-            <span>Amount: $<%= current_course.cost %></span>
-          </label>
-        </article>
+      <!-- If not teacher, check if the user is enrolled -->
+      <% if current_user && current_user.enrolled_in?(current_course) %>
+        <div class="student-panel-wrapper">
+          <p class="enrolled-msg">You are enrolled in this course</p>
+        </div>
+      <!-- if not enrolled, show enroll button -->
+      <% else %>
+      <div class="student-panel-wrapper">
+        <%= link_to 'Enroll in Course', course_enrollments_path(current_course), class: 'button', method: :post %>
+        <%= form_tag course_enrollments_path(current_course) do %>
+          <article>
+            <label class="amount">
+              <span>Amount: $<%= current_course.cost %></span>
+            </label>
+          </article>
 
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-description="A month's subscription"
-                data-amount="500"></script>
-      <% end %>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount="500"></script>
+        <% end %>
     </div>
+      <% end %>
     <% end %>
 
     <hr>
