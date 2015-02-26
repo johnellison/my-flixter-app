@@ -37,6 +37,8 @@ gem 'figaro'
 gem 'mini_magick'
 # Use carrierwave-aws for carrierwave & amazon s3 setup
 gem 'carrierwave-aws'
+# Use stripe for payment processing
+gem 'stripe'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -52,6 +54,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+
+  gem 'simplecov', require: false
   # Use factory girl for test models
   gem 'factory_girl_rails', '~> 4.0'
 
