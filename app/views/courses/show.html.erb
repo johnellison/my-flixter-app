@@ -16,18 +16,20 @@
       <!-- if not enrolled, show enroll button -->
       <% else %>
       <div class="student-panel-wrapper">
-        <%= link_to 'Enroll in Course', course_enrollments_path(current_course), class: 'button', method: :post %>
+        <% if current_course.free? %>
+          <%= link_to 'Enroll in Free Course', course_enrollments_path(current_course), class: 'button', method: :post %>
+        <% else %>
         <%= form_tag course_enrollments_path(current_course) do %>
-          <article>
+           <article>
             <label class="amount">
-              <span>Amount: $<%= current_course.cost %></span>
+              <span>Amount: <%= number_to_currency current_course.cost %></span>
             </label>
           </article>
-
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="A month's subscription"
-                  data-amount="500"></script>
+                  data-description="<%= current_course.title %> (<% number_to_currency current_course.cost %>)"
+                  data-amount="<%= current_course.cost_in_cents %>"></script>
+        <% end %>
         <% end %>
     </div>
       <% end %>
