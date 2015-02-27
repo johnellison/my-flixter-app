@@ -17,14 +17,13 @@ class EnrollmentsController < ApplicationController
         :currency    => 'usd'
       )
     end
-    
+
     current_user.enrollments.create(course: current_course)
     redirect_to course_path(current_course)
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-
-
+      redirect_to course_path(current_course)
   end
 
   private
@@ -32,4 +31,5 @@ class EnrollmentsController < ApplicationController
   def current_course
     @course ||= Course.find(params[:course_id])
   end
+
 end
