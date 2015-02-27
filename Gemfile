@@ -38,6 +38,8 @@ gem 'mini_magick'
 gem 'carrierwave-aws'
 # Use stripe for payment processing
 gem 'stripe'
+# Use ranked model for ordering lessons and sections
+gem 'ranked-model'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
