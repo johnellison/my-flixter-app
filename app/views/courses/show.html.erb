@@ -5,7 +5,7 @@
     <!-- Check if user is logged in and created the course (IE: is the teacher) -->
     <% if current_user && current_user == current_course.user %>
     <div class="teacher-panel-wrapper">
-      <%= link_to 'Access Teacher Panel', teacher_course_path(current_course), class: 'button secondary' %>
+      <%= link_to 'Access Teacher Panel', teacher_course_path(current_course), class: 'button' %>
     </div>
     <% else %>
       <!-- If not teacher, check if the user is enrolled -->
@@ -35,7 +35,7 @@
     <hr>
 
     <!-- List Course Sections -->
-    <%= render partial: 'courses/sections_list', locals: { include_add_lesson: false } %>
+    <%= render partial: 'courses/sections_list', locals: { include_teacher_view: false } %>
 
   </div>
 </div>

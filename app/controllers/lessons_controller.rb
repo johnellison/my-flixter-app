@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
   before_action :require_course_enrollment_for_lesson, only: :show
 
   def show
+
   end
 
   private
@@ -10,7 +11,9 @@ class LessonsController < ApplicationController
     this_course = current_lesson.section.course
 
     if current_user.enrolled_in?(this_course) != true
-      redirect_to course_path(this_course), alert: 'Please enroll in this course to view its lessons'
+      if current_lesson.section.course.user != current_user
+        redirect_to course_path(this_course), alert: 'Please enroll in this course to view its lessons'
+      end
     end
   end
 

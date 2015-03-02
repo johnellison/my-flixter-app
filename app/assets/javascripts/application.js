@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery-smooth-scroll
 //= require_tree .
+//= require jquery-ui 
 
 

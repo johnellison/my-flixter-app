@@ -126,7 +126,14 @@ a.teacher-panel {
   margin-bottom: 1em;
   @include media($medium-screen-up) {
     @include span-columns(4);
-    @include omega(3n);
+    @include omega(5n);
+  }
+  &.teacher {
+    @include omega-reset(5n);
+    @include fill-parent();
+    padding: .75rem 1rem;
+    border-radius: $base-border-radius;
+    background: $silver;
   }
 }
 

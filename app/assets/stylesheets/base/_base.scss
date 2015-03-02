@@ -14,8 +14,16 @@
 @import "tables";
 @import "typography";
 
-// Omega Reset
+// Omega Reset for creating unique grid settings for different media queries
 @mixin omega-reset($nth) {
   &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
   &:nth-child(#{$nth}+1) { clear: none }
+}
+
+@mixin global-hover {
+  transition: all .2s ease-in-out;
+  &:hover,:focus {
+      transform: scale(1.009);
+      box-shadow: 2px 2px 7px $base-font-color;
+    }
 }

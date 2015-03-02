@@ -24,6 +24,8 @@ gem 'normalize-rails'
 gem 'jquery-rails'
 # Use smooth scroll for in-page links
 gem 'jquery-smooth-scroll-rails', '~> 0.0.5'
+# Use jquery UI
+gem 'jquery-ui-rails'
 # Use devise gem for authentication
 gem 'devise'
 # Use simple form for forms

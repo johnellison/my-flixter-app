@@ -5,16 +5,31 @@
 
     <!-- Preview as student -->
     <div class="teacher-panel-wrapper">
-        <%= link_to 'Preview Course as a Student', course_path(current_course), class: 'button secondary' %>
+        <%= link_to 'Preview Course as a Student', course_path(current_course), class: 'button' %>
     </div>
 
     <hr>
 
     <!-- List Course Sections -->
-    <%= render partial: 'courses/sections_list', locals: { include_add_lesson: true } %>
+    <%= render partial: 'courses/sections_list', locals: { include_teacher_view: true } %>
 
     <!-- Add a section to this course -->
     <%= link_to 'Add Section', new_teacher_course_section_path(current_course), class: 'button secondary' %>
 
   </div>
 </div>
+<script>
+(function ($) {
+    $('.section-lessons-list').sortable(
+    {
+      update: function( event, ui ) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { lesson: { row_order_position: ui.item.index() } }
+        });
+      }
+    });
+}(jQuery));
+</script>
