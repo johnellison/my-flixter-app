@@ -12,6 +12,11 @@
       <% section.lessons.rank(:row_order).each do |lesson| %>
         <li class="section-lesson-list--item <% if include_teacher_view %> teacher <% end %>" data-update-url=<%= teacher_lesson_path(lesson) %>>
           <%= link_to lesson_path(lesson) do %>
+          <% if include_teacher_view %>
+            <span class="movable-icon top"></span>
+            <span class="movable-icon middle"></span>
+            <span class="movable-icon bottom"></span>
+          <% end %>
             <h5 class="section-lesson--title">
               <%= lesson.title %>
             </h5>
