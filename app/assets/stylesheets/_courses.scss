@@ -124,35 +124,9 @@ a.teacher-panel {
 
 .section-lesson-list--item {
   margin-bottom: 1em;
-  position: relative;
   @include media($medium-screen-up) {
     @include span-columns(4);
     @include omega(5n);
-  }
-  &.teacher {
-    @include omega-reset(5n);
-    @include fill-parent();
-    padding: .75em 1em;
-    border-radius: $base-border-radius;
-    background: $silver;
-  }
-  .movable-icon {
-    position: absolute;
-    right: 1em;
-    display: block;
-    height: 2px;
-    width: 36px;
-    border-radius: 2px;
-    background: $base-font-color;
-    &.top {
-      top: 1.5em;
-    }
-    &.middle {
-      top: 2.25em;
-    }
-    &.bottom {
-      top: 3em;
-    }
   }
 }
 

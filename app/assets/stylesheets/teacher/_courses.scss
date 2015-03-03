@@ -28,5 +28,62 @@
   }
 }
 
+.course-section-list--item {
+  position: relative;
+
+  .movable-icon {
+    position: absolute;
+    right: 1em;
+    display: block;
+    height: 2px;
+    width: 36px;
+    border-radius: 2px;
+    background: $base-font-color;
+    &.top {
+      top: 1.5em;
+    }
+    &.middle {
+      top: 2.25em;
+    }
+    &.bottom {
+      top: 3em;
+    }
+  }
+}
+
+.section-lesson-list--item {
+  position: relative;
+  &.teacher {
+    @include omega-reset(5n);
+    @include fill-parent();
+    padding: .75em 1em;
+    border-radius: $base-border-radius;
+    background: $silver;
+    .section-lesson--subtitle {
+      margin-bottom: 0;
+    }
+  }
+  .movable-icon {
+    position: absolute;
+    right: 1em;
+    display: block;
+    height: 2px;
+    width: 36px;
+    border-radius: 2px;
+    background: $base-font-color;
+    &.top {
+      top: 1.15em;
+    }
+    &.middle {
+      top: 1.9em;
+    }
+    &.bottom {
+      top: 2.65em;
+    }
+  }
+}
+
+
+
 
 

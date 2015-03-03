@@ -1,6 +1,11 @@
 <ul class="course-sections-list">
-  <% current_course.sections.each do |section| %>
-    <li class="course-section-list--item">
+  <% current_course.sections.rank(:row_order).each do |section| %>
+    <li class="course-section-list--item <% if include_teacher_view %> teacher <% end %>" data-update-url=<%= teacher_section_path(section) %>>
+      <% if include_teacher_view %>
+        <span class="movable-icon top"></span>
+        <span class="movable-icon middle"></span>
+        <span class="movable-icon bottom"></span>
+      <% end %>
       <h2 class="course-section--id">
         <%= section.title %>
       </h2>

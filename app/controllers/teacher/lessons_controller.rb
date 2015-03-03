@@ -9,7 +9,6 @@ class Teacher::LessonsController < ApplicationController
 
   def create
     @lesson = current_section.lessons.create(lesson_params)
-    redirect_to teacher_course_path(current_section.course)
     if @lesson.valid?
       redirect_to teacher_course_path(current_section.course)
     else

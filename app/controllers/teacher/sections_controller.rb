@@ -1,6 +1,7 @@
 class Teacher::SectionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_auth_for_current_course
+  before_action :require_auth_for_current_course, only: [:new, :create]
+  before_action :require_auth_for_current_section, only: :update
 
   def new
     @section = Section.new
@@ -15,12 +16,27 @@ class Teacher::SectionsController < ApplicationController
     end
   end
 
+  def update
+    current_section.update_attributes(section_params)
+    render text: 'Updated'
+  end
+
   private
+
+  def require_auth_for_current_section
+    if current_section.course.user != current_user
+      render text: 'You are unauthorized to perform this action' , status: :unauthorized
+    end
+  end
 
   def require_auth_for_current_course
     if current_course.user != current_user
       render text: 'You are unauthorized to perform this action' , status: :unauthorized
     end
+  end
+
+  def current_section
+    @section ||= Section.find(params[:id])
   end
 
   helper_method :current_course
@@ -29,7 +45,7 @@ class Teacher::SectionsController < ApplicationController
   end
 
   def section_params
-    params.require(:section).permit(:title, :subtitle)
+    params.require(:section).permit(:title, :subtitle, :row_order_position)
   end
 
 end
