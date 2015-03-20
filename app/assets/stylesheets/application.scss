@@ -16,9 +16,8 @@
 
 /* Base Imports */
  @import 'bourbon',
-         'base/grid-settings',
-         'neat',
          'base/base',
+         'neat',
          'config';
 
 /* application imports */
@@ -46,6 +45,9 @@
 /* Lessons */
 @import 'lessons',
         'video-js';
+
+/* Dashboard */
+@import 'dashboard';
 
 /* debug */
 // @import 'debug';

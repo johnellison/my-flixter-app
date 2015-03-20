@@ -1,0 +1,54 @@
+// Place all the styles related to the dashboards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.dashboard-wrapper {
+  @include outer-container;
+  padding: 3em 0;
+}
+
+.dashboard-content {
+  @include span-columns(10);
+  @include shift(1);
+  h1 {
+    text-align: center;
+  }
+}
+
+.dashboard-course-wrapper {
+  @include outer-container;
+}
+
+.dashboard-course-content {
+  @include fill-parent;
+
+  h2 {
+    margin-top: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $medium-gray;
+    font-weight: 200;
+    letter-spacing: 1.4px;
+    background-color: fff;
+    z-index: 1;
+  }
+}
+
+.dashboard-course--list {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dashboard-course--item {
+  margin-bottom: 2em;
+  border: 1px solid black;
+  border-radius: $base-border-radius;
+  padding: 1em 1.5em;
+  a:not(.button) {
+    color: $base-font-color;
+  }
+}
+
+.dashboard-course--image {
+  margin: 0 auto;
+}

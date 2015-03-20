@@ -1,0 +1,40 @@
+<div class="dashboard-wrapper">
+  <div class="dashboard-content">
+    <h1>My Dashboard</h1>
+
+    <div class="dashboard-course-wrapper">
+      <div class="dashboard-course-content">
+      <% if current_user.enrolled_courses.exists? %>
+        <h2>What I'm Learning</h2>
+        <ul class="dashboard-course--list">
+          <% current_user.enrolled_courses.each do |course| %>
+            <li class="dashboard-course--item">
+              <h3><%= link_to course.title, course_path(course) %></h3>
+                <div class="dashboard-course--image">
+                  <%= image_tag course.image %>
+                </div>
+                <p class="dashboard-course--description"><%= truncate(course.description, length: 150) %></p>
+                <%= link_to 'View Course', course_path(course), class: 'button' %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+      <% if current_user.courses.exists? %>
+        <h2>What I'm Teaching</h2>
+        <ul class="dashboard-course--list">
+          <% current_user.courses.each do |course| %>
+            <li class="dashboard-course--item">
+              <h3><%= link_to course.title, course_path(course) %></h3>
+                <div class="dashboard-course--image">
+                  <%= image_tag course.image %>
+                </div>
+                <p class="dashboard-course--description"><%= truncate(course.description, length: 150) %></p>
+                <%= link_to 'View Course', course_path(course), class: 'button' %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

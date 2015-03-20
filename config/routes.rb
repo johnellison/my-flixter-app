@@ -3,10 +3,15 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'static_pages#index'
+
+  resource :dashboard, only: :show
+
   resources :courses, only: [:index, :show] do
     resources :enrollments, only: :create
   end
+
   resources :lessons, only: [:show]
+
   namespace :teacher do
     resources :lessons, only: :update
     resources :sections, only: :update
@@ -17,4 +22,5 @@ Rails.application.routes.draw do
       resources :sections, only: [:new, :create ]
     end
   end
+
 end
