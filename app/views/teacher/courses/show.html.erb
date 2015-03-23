@@ -14,7 +14,18 @@
     <%= render partial: 'courses/sections_list', locals: { include_teacher_view: true } %>
 
     <!-- Add a section to this course -->
-    <%= link_to 'Add Section', new_teacher_course_section_path(current_course), class: 'button secondary' %>
+    <div class="modal">
+      <label for="modal-2">
+        <div class="button secondary">Add Section</div>
+      </label>
+      <input class="modal-state" id="modal-2" type="checkbox" />
+      <div class="modal-window">
+        <div class="modal-inner">
+        <label class="modal-close" for="modal-2"></label>
+          
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
@@ -43,5 +54,35 @@
         });
       }
     });
+
+    $('.new-lesson').click( function(e) {
+      var lessonUrl = $(e.target).data('lesson-url');
+      $('#newLessonForm').attr('action', lessonUrl);
+    })
+
+    $("#modal-1").on("change", function() {
+      if ($(this).is(":checked")) {
+        $("body").addClass("modal-open");
+      } else {
+        $("body").removeClass("modal-open");
+      }
+    });
+
+    $("#modal-2").on("change", function() {
+      if ($(this).is(":checked")) {
+        $("body").addClass("modal-open");
+      } else {
+        $("body").removeClass("modal-open");
+      }
+    });
+
+    $(".modal-window").on("click", function() {
+      $(".modal-state:checked").prop("checked", false).change();
+    });
+
+    $(".modal-inner").on("click", function(e) {
+      e.stopPropagation();
+    });
+
 }(jQuery));
 </script>

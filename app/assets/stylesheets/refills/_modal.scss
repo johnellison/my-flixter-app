@@ -44,11 +44,6 @@
     display: none;
   }
 
-  .modal-trigger {
-    @include button(flat, $base-accent-color);
-    padding: 0.8em 1em;
-  }
-
   .modal-window { // overlay
     @include transition(opacity 0.25s ease);
     @include position(fixed, 0px 0px 0px 0px);
@@ -120,8 +115,6 @@
 
     h1 {
       color: $base-font-color;
-      margin-bottom: 0.6em;
-      text-align: left;
       text-transform: capitalize;
     }
 
@@ -166,5 +159,3 @@
 .modal-closed {
   overflow: auto;
 }
-
-// Based on code by Kasper Mikiewicz

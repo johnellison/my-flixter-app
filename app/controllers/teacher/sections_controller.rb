@@ -1,12 +1,8 @@
 class Teacher::SectionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_auth_for_current_course, only: [:new, :create]
+  before_action :require_auth_for_current_course, only: [:create]
   before_action :require_auth_for_current_section, only: :update
 
-  def new
-    @section = Section.new
-  end
-  
   def create
     @section = @course.sections.create(section_params)
     if @section.valid?

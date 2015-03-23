@@ -7,8 +7,8 @@
 }
 
 .new-course-form-content, .new-section-form-content, .new-lesson-form-content {
-  @include span-columns(10);
-  @include shift(1);
+  // @include span-columns(10);
+  // @include shift(1);
   h1, hgroup {
     text-align: center;
   }
