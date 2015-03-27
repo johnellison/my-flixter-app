@@ -22,7 +22,18 @@
       <div class="modal-window">
         <div class="modal-inner">
         <label class="modal-close" for="modal-2"></label>
-          
+          <div class="new-section-form-wrapper">
+            <div class="new-section-form-content">
+             <hgroup>
+               <h1>Create New section</h1>
+             </hgroup>
+              <%= simple_form_for @section, url: teacher_course_sections_path(current_course) do |f| %>
+                <%= f.input :title %>
+                <%= f.input :subtitle %>
+                <%= f.submit 'Create Section', class: 'add-section' %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
