@@ -24,3 +24,8 @@
 .enrolled-msg {
   @include flash($notice-color);
 }
+
+.next-lesson {
+  @include button;
+  float: right;
+}

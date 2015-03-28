@@ -1,15 +1,21 @@
 <div class="lesson-show-wrapper">
   <div class="lesson-show-content">
    <hgroup>
+      <h6><%= current_lesson.section.title %></h6>
       <h1><%= current_lesson.title %></h1>
-     <h3><%= current_lesson.subtitle %></h3>
+      <h3><%= current_lesson.subtitle %></h3>
    </hgroup>
-     <video id="MY_VIDEO_1" class="video-js vjs-default-skin vjs-big-play-centered" controls
-      preload="auto" poster="/assets/black.jpg"
-      data-setup="{}">
-      <source src="<%= current_lesson.video.to_s %>" type='video/mp4'>
-      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-     </video>
+   <video id="MY_VIDEO_1" class="video-js vjs-default-skin vjs-big-play-centered" controls
+    preload="auto" poster="/assets/black.jpg"
+    data-setup="{}">
+    <source src="<%= current_lesson.video.to_s %>" type='video/mp4'>
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+   </video>
+   <p>
+   <% if current_lesson.next_lesson.present? %>
+    <%= link_to 'Next Lesson' , lesson_path(current_lesson.next_lesson), class: 'button' %>
+   <% end %>
+   </p>
   </div>
 </div>
 <script type="text/javascript">
